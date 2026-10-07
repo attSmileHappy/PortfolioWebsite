@@ -1,12 +1,13 @@
 {
   "framework": "vite",
-  "installCommand": "npm install --legacy-peer-deps",
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
   "rewrites": [
     {
+      "source": "/portfolio-yeji-kim.zip",
+      "destination": "/portfolio-yeji-kim.zip"
+    },
+    {
       "source": "/(.*)",
-      "destination": "/"
+      "destination": "/index.html"
     }
   ]
 }

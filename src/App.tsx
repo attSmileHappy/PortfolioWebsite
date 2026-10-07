@@ -1,99 +1,92 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
-import React, { useState, useEffect } from 'react';
-import { Header } from './components/Header';
-import { HeroSection } from './components/HeroSection';
-import { CoreStrengths } from './components/CoreStrengths';
-import { CareerEducation } from './components/CareerEducation';
-import { SkillMatrix } from './components/SkillMatrix';
-import { ProjectsSection } from './components/ProjectsSection';
-import { ProjectDetailModal } from './components/ProjectDetailModal';
-import { ContactSection } from './components/ContactSection';
-import { Footer } from './components/Footer';
-import { ProjectItem } from './data/portfolioData';
+import React, { useState } from 'react';
+import { Navbar } from './components/Navbar';
+import { Hero } from './components/Hero';
+import { IntroQuote } from './components/IntroQuote';
+import { FeaturedWorks } from './components/FeaturedWorks';
+import { ProjectCatalog } from './components/ProjectCatalog';
+import { ExperienceTimeline } from './components/ExperienceTimeline';
+import { SkillsMatrix } from './components/SkillsMatrix';
+import { PhilosophyFAQ } from './components/PhilosophyFAQ';
+import { ContactFooter } from './components/ContactFooter';
+import { ProjectModal } from './components/ProjectModal';
+import { ResumeModal } from './components/ResumeModal';
+import { ContactModal } from './components/ContactModal';
+import { ALL_PROJECTS } from './data/portfolioData';
 
 export default function App() {
-  const [isDark, setIsDark] = useState<boolean>(() => {
-    // Default to dark mode for a luxurious aesthetic as requested
-    const saved = localStorage.getItem('portfolio-theme');
-    if (saved) return saved === 'dark';
-    return true;
-  });
+  const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
+  const [isResumeOpen, setIsResumeOpen] = useState(false);
+  const [isContactOpen, setIsContactOpen] = useState(false);
 
-  const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
+  const selectedProject = ALL_PROJECTS.find((p) => p.id === selectedProjectId) || null;
 
-  useEffect(() => {
-    localStorage.setItem('portfolio-theme', isDark ? 'dark' : 'light');
-    if (isDark) {
-      document.documentElement.classList.add('dark');
-      document.body.style.backgroundColor = '#080b11';
-      document.body.style.color = '#ffffff';
-    } else {
-      document.documentElement.classList.remove('dark');
-      document.body.style.backgroundColor = '#f8fafd';
-      document.body.style.color = '#0f172a';
+  const handleExploreClick = () => {
+    const el = document.getElementById('featured') || document.getElementById('projects');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
     }
-  }, [isDark]);
-
-  const toggleTheme = () => {
-    setIsDark(prev => !prev);
   };
 
-  const handleOpenContact = () => {
-    const contactElem = document.getElementById('contact');
-    if (contactElem) {
-      contactElem.scrollIntoView({ behavior: 'smooth' });
-    }
+  const handleContactClick = () => {
+    setIsContactOpen(true);
   };
 
   return (
-    <div className={`min-h-screen transition-colors duration-300 font-sans ${
-      isDark ? 'bg-[#080b11] text-slate-100 dark' : 'bg-[#f8fafd] text-slate-900'
-    }`}>
-      {/* Navigation Header */}
-      <Header
-        isDark={isDark}
-        onToggleTheme={toggleTheme}
-        onOpenContact={handleOpenContact}
+    <div className="min-h-screen bg-[#FAF8F5] text-[#141413] font-sans selection:bg-[#FFE600] selection:text-black flex flex-col">
+      {/* Floating Top Navigation */}
+      <Navbar
+        onOpenContact={() => setIsContactOpen(true)}
+        onOpenResume={() => setIsResumeOpen(true)}
       />
 
-      <main>
-        {/* Hero Section with Embedded Spline 3D Robot */}
-        <HeroSection
-          isDark={isDark}
-          onOpenContact={handleOpenContact}
+      {/* Main Content Flow */}
+      <main className="flex-1">
+        {/* Full-screen 100vh Spline 3D Hero with Cinematic Zoom-Out Reveal */}
+        <Hero
+          onExploreClick={handleExploreClick}
+          onContactClick={handleContactClick}
         />
 
-        {/* Core Strengths (Page 2 of PDF) */}
-        <CoreStrengths isDark={isDark} />
+        {/* Editorial Statement & Core Competencies */}
+        <IntroQuote />
 
-        {/* Projects Section with Bento & Detail Modals (Page 4-21 of PDF) */}
-        <ProjectsSection
-          isDark={isDark}
-          onSelectProject={(project) => setSelectedProject(project)}
+        {/* Featured Case Studies (Large Editorial Visual Cards) */}
+        <FeaturedWorks
+          onSelectProject={(id) => setSelectedProjectId(id)}
         />
 
-        {/* Technical Skills Matrix (Page 3 of PDF) */}
-        <SkillMatrix isDark={isDark} />
+        {/* Complete Filterable Project Archive */}
+        <ProjectCatalog
+          onSelectProject={(id) => setSelectedProjectId(id)}
+        />
 
-        {/* Career & Education History (Page 3 of PDF) */}
-        <CareerEducation isDark={isDark} />
+        {/* Experience & Education Journey */}
+        <ExperienceTimeline />
 
-        {/* Contact Section */}
-        <ContactSection isDark={isDark} />
+        {/* Interactive Technology Matrix */}
+        <SkillsMatrix />
+
+        {/* Philosophy & Engineering Q&A */}
+        <PhilosophyFAQ />
       </main>
 
-      {/* Footer */}
-      <Footer isDark={isDark} />
+      {/* High-Impact Brand Contact & Footer */}
+      <ContactFooter />
 
-      {/* Project Detail Deep-Dive Modal */}
-      <ProjectDetailModal
+      {/* Interactive Modals */}
+      <ProjectModal
         project={selectedProject}
-        onClose={() => setSelectedProject(null)}
-        isDark={isDark}
+        onClose={() => setSelectedProjectId(null)}
+      />
+
+      <ResumeModal
+        isOpen={isResumeOpen}
+        onClose={() => setIsResumeOpen(false)}
+      />
+
+      <ContactModal
+        isOpen={isContactOpen}
+        onClose={() => setIsContactOpen(false)}
       />
     </div>
   );
