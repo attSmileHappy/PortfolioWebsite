@@ -72,6 +72,22 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             )}
           </div>
 
+          {/* Project Image Banner if available */}
+          {project.image && (
+            <div className="relative overflow-hidden rounded-xl bg-[#EFECE6] border border-[#E8E4DC] aspect-16/9 max-h-72">
+              <img
+                src={project.image}
+                alt={project.title}
+                loading="lazy"
+                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  (e.target as HTMLElement).style.display = 'none';
+                }}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          )}
+
           {/* Quick Info Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 rounded-xl bg-white border border-[#E8E4DC] text-xs">
             <div>

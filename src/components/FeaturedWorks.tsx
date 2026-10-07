@@ -43,14 +43,24 @@ export const FeaturedWorks: React.FC<FeaturedWorksProps> = ({ onSelectProject })
                 >
                   <div
                     onClick={() => onSelectProject(story.projectId)}
-                    className="relative overflow-hidden rounded-2xl bg-[#EFECE6] border border-[#E8E4DC] group-hover:border-[#141413] transition-all duration-300 cursor-pointer shadow-sm aspect-16/9"
+                    className="relative overflow-hidden rounded-2xl bg-[#EFECE6] border border-[#E8E4DC] group-hover:border-[#141413] transition-all duration-300 cursor-pointer shadow-sm aspect-16/9 flex items-center justify-center"
                   >
                     <img
                       src={story.image}
                       alt={story.title}
+                      loading="lazy"
                       referrerPolicy="no-referrer"
+                      onError={(e) => {
+                        // In case of load error, hide the broken img tag and reveal the styled fallback background
+                        (e.target as HTMLElement).style.display = 'none';
+                      }}
                       className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500 ease-cinematic"
                     />
+                    {/* Fallback pattern in case image is loading or unavailable */}
+                    <div className="absolute inset-0 -z-1 bg-gradient-to-br from-[#EFECE6] to-[#E2DDD3] flex flex-col items-center justify-center p-6 text-center">
+                      <span className="text-xs font-mono font-bold text-[#7A776F] uppercase tracking-wider">{story.kicker}</span>
+                      <span className="text-sm font-bold text-[#141413] mt-2 max-w-xs">{story.title}</span>
+                    </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                       <span className="text-xs font-semibold text-white flex items-center gap-1.5 bg-black/60 backdrop-blur-xs px-3.5 py-1.5 rounded-full">
                         View Project Case Study

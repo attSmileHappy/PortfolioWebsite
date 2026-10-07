@@ -2,6 +2,10 @@
   "framework": "vite",
   "rewrites": [
     {
+      "source": "/images/(.*)",
+      "destination": "/images/$1"
+    },
+    {
       "source": "/portfolio-yeji-kim.zip",
       "destination": "/portfolio-yeji-kim.zip"
     },
