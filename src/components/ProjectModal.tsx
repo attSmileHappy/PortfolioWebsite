@@ -33,17 +33,17 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-3xl max-h-[90vh] bg-[#FAF8F5] rounded-2xl border border-[#E8E4DC] shadow-2xl overflow-y-auto no-scrollbar flex flex-col animate-in zoom-in-95 duration-200"
+        className="relative w-full max-w-3xl max-h-[90vh] bg-white rounded-2xl border border-[#E8E4DC] shadow-2xl overflow-y-auto no-scrollbar flex flex-col animate-in zoom-in-95 duration-200"
       >
         {/* Top Header Bar */}
-        <div className="sticky top-0 z-20 flex items-center justify-between px-6 sm:px-8 py-5 bg-[#FAF8F5]/90 backdrop-blur-md border-b border-[#E8E4DC]">
+        <div className="sticky top-0 z-20 flex items-center justify-between px-6 sm:px-8 py-5 bg-white/95 backdrop-blur-md border-b border-[#E8E4DC]">
           <div className="flex items-center gap-3">
             <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#7A776F]">
               Case Study · {project.category}
             </span>
             {project.award && (
-              <span className="inline-flex items-center gap-1 text-xs font-bold text-amber-800 bg-[#FFE600] px-2.5 py-0.5 rounded-full">
-                <Award className="w-3.5 h-3.5" />
+              <span className="inline-flex items-center gap-1 text-xs font-bold text-[#004ab5] bg-[#004ab5]/10 border border-[#004ab5]/20 px-2.5 py-0.5 rounded-full">
+                <Award className="w-3.5 h-3.5 text-[#004ab5]" />
                 {project.award}
               </span>
             )}
@@ -153,7 +153,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               <div className="p-4 rounded-xl bg-[#141413] text-[#F5F2EB] font-mono text-xs space-y-2">
                 {project.architectureDetails.map((arch, idx) => (
                   <div key={idx} className="flex items-center gap-2">
-                    <span className="text-[#FFE600]">→</span>
+                    <span className="text-[#004ab5]">→</span>
                     <span>{arch}</span>
                   </div>
                 ))}

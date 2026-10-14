@@ -8,7 +8,7 @@ interface FeaturedWorksProps {
 
 export const FeaturedWorks: React.FC<FeaturedWorksProps> = ({ onSelectProject }) => {
   return (
-    <section id="featured" className="py-24 sm:py-32 bg-[#FAF8F5]">
+    <section id="featured" className="py-24 sm:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         
         {/* Section Header */}

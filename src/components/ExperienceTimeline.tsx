@@ -4,7 +4,7 @@ import { Briefcase, GraduationCap, Award, CheckCircle2 } from 'lucide-react';
 
 export const ExperienceTimeline: React.FC = () => {
   return (
-    <section id="experience" className="py-24 sm:py-32 bg-[#FAF8F5] border-t border-[#E8E4DC]">
+    <section id="experience" className="py-24 sm:py-32 bg-white border-t border-[#E8E4DC]">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         
         {/* Section Header */}
@@ -35,7 +35,7 @@ export const ExperienceTimeline: React.FC = () => {
               {CAREER_HISTORY.map((career, idx) => (
                 <div key={idx} className="relative pl-6 sm:pl-8 border-l-2 border-[#141413] space-y-3">
                   {/* Timeline indicator node */}
-                  <span className="absolute -left-[7px] top-1.5 w-3 h-3 rounded-full bg-[#141413] ring-4 ring-[#FAF8F5]" />
+                  <span className="absolute -left-[7px] top-1.5 w-3 h-3 rounded-full bg-[#004ab5] ring-4 ring-white" />
 
                   <div className="flex flex-wrap items-baseline justify-between gap-2">
                     <span className="text-xs font-mono font-semibold text-[#7A776F]">
@@ -60,7 +60,7 @@ export const ExperienceTimeline: React.FC = () => {
                   <div className="pt-2 space-y-2">
                     {career.highlights.map((item, hIdx) => (
                       <div key={hIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#141413]">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#141413] shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#004ab5] shrink-0 mt-0.5" />
                         <span>{item}</span>
                       </div>
                     ))}
@@ -83,12 +83,12 @@ export const ExperienceTimeline: React.FC = () => {
               {EDUCATION_HISTORY.map((edu, idx) => (
                 <div
                   key={idx}
-                  className="p-6 rounded-2xl bg-white border border-[#E8E4DC] hover:border-[#141413] transition-colors space-y-3 shadow-2xs"
+                  className="p-6 rounded-2xl bg-white border border-[#E8E4DC] hover:border-[#004ab5] transition-colors space-y-3 shadow-2xs"
                 >
                   <div className="flex items-center justify-between text-xs text-[#7A776F] font-mono">
                     <span>{edu.period}</span>
                     {edu.gpa && (
-                      <span className="font-semibold text-[#141413] bg-[#FAF8F5] px-2 py-0.5 rounded border border-[#E8E4DC]">
+                      <span className="font-semibold text-[#004ab5] bg-[#004ab5]/10 px-2 py-0.5 rounded border border-[#004ab5]/20">
                         {edu.gpa}
                       </span>
                     )}
@@ -106,9 +106,9 @@ export const ExperienceTimeline: React.FC = () => {
               ))}
 
               {/* Award Callout Box */}
-              <div className="p-6 rounded-2xl bg-[#FFE600]/20 border border-[#FFE600] space-y-2">
-                <div className="flex items-center gap-2 text-xs font-bold text-[#141413]">
-                  <Award className="w-4 h-4 text-[#141413]" />
+              <div className="p-6 rounded-2xl bg-[#004ab5]/5 border border-[#004ab5]/20 space-y-2">
+                <div className="flex items-center gap-2 text-xs font-bold text-[#004ab5]">
+                  <Award className="w-4 h-4 text-[#004ab5]" />
                   <span>HONORS & AWARDS</span>
                 </div>
                 <p className="text-sm font-bold text-[#141413]">

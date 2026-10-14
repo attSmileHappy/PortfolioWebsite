@@ -16,7 +16,7 @@
   - 시스템 접근성(`prefers-reduced-motion`) 설정을 감지하여 모션 감소 모드 자동 지원.
 
 - **하이엔드 에디토리얼 디자인 시스템**:
-  - 부드러운 웜 뉴트럴 캔버스 컬러(`#FAF8F5`)와 딥 차콜 타이포그래피(`#141413`), 시그니처 옐로우 포인트(`#FFE600`) 조화.
+  - 깔끔한 순백색 캔버스 컬러(`#FFFFFF`)와 딥 차콜 타이포그래피(`#141413`), 시그니처 로열 블루 포인트(`#004ab5`) 조화.
   - *Plus Jakarta Sans*와 *Noto Sans KR* 폰트를 조화롭게 적용하여 영문과 국문 모두 높은 가독성 제공.
   - 박스형 뱃지 남용을 지양하고 깔끔한 비박스형 메타데이터(`·` 구분자)를 적용한 세련된 여백 중심 구조.
 
@@ -40,14 +40,17 @@
 - **상세 케이스 스터디 모달**:
   - 각 프로젝트 클릭 시 아키텍처 다이어그램, 세부 개발 기여도, 기술 스택, GitHub 링크를 확인할 수 있는 슬라이드오버 모달 제공.
 - **실무 경력 & 학력 타임라인**:
-  - 와이*즘(주), 시*소프트(주) 실무 경험 및 한국방송통신대, 남서울대학교(전공 4.29/4.5 교직이수), 중앙정보처리학원 이력 정리.
+  - 와이리즘(주), 시와소프트(주) 실무 경험 및 한국방송통신대, 남서울대학교(전공 4.29/4.5 교직이수), 중앙정보처리학원 이력 정리.
 - **인터랙티브 기술 스택 매트릭스**:
   - 프로그래밍 언어, 프레임워크/라이브러리, AI 모델, 데이터베이스/인프라 도구 탭별 인터랙티브 분류.
 - **엔지니어링 철학 FAQ 아코디언**:
   - WPF 마이그레이션 노하우, RPA 100% 납기 준수 비결, 하드웨어 연동 시 예외 처리 등 기술적 질의응답 수록.
-- **인쇄 지원 이력서(CV) 뷰어 & 즉시 문의 기능**:
+- **인쇄 지원 이력서(CV) 뷰어**:
   - 채용 담당자를 위한 원클릭 인쇄/PDF 저장 지원 이력서 모달 탑재.
-  - 이메일/전화번호 원클릭 클립보드 복사 및 직접 문의 폼 지원.
+- **최하단 관리자 콘솔 & 방문자 로그 모니터링 시스템**:
+  - 단방향 SHA-256 암호화 해시 인증 기반 시스템 관리자 팝업 탑재 (소스 코드 내 비밀번호 평문 노출 원천 방지).
+  - 방문자 일시, IP/접속 위치, OS/브라우저, 체류 시간, 유입 경로(Referrer), 세부 행동 내역 실시간 기록 및 대시보드 시각화.
+  - 오늘 방문자 수, 총 누적 세션, 기기 점유율 통계, 실시간 검색/필터링 및 CSV 로그 내보내기 기능 지원.
 
 ---
 
@@ -104,9 +107,27 @@ npm run preview
 
 ---
 
-## ☁️ Vercel 배포 
+## ☁️ Vercel 원클릭 배포 가이드 (Vercel Deployment)
 
 본 프로젝트는 Vercel 배포에 완벽히 최적화되어 있으며, `vercel.json`에 SPA 라우팅 및 정적 이미지 리소스 규칙이 사전 정의되어 있습니다.
+
+1. 본 프로젝트 코드를 본인의 **GitHub 저장소**에 푸시합니다:
+   ```bash
+   git init
+   git add .
+   git commit -m "feat: Yeji Kim creative developer portfolio"
+   git branch -M main
+   git remote add origin https://github.com/attSmileHappy/portfolio.git
+   git push -u origin main
+   ```
+2. **[Vercel 대시보드](https://vercel.com/dashboard)**에 접속하여 로그인합니다.
+3. **`Add New...`** → **`Project`** 클릭 후 해당 GitHub 리포지토리를 **`Import`**합니다.
+4. 배포 설정 확인:
+   - **Framework Preset**: `Vite` (자동 감지)
+   - **Root Directory**: `./`
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `dist`
+5. **`Deploy`** 버튼을 누르면 약 1분 이내에 무료 HTTPS 프로덕션 도메인으로 자동 배포가 완료됩니다.
 
 ---
 
@@ -149,5 +170,5 @@ npm run preview
 
 - **개발자**: 김예지 (Yeji Kim)
 - **이메일**: [allthetimesh29@gmail.com](mailto:allthetimesh29@gmail.com)
-- **연락처**: 010-2***-****
+- **연락처**: 010-2658-3219
 - **GitHub**: [https://github.com/attSmileHappy](https://github.com/attSmileHappy)

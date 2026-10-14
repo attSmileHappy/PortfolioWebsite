@@ -168,7 +168,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
         </div>
 
         {/* Modal Footer */}
-        <div className="p-6 bg-[#FAF8F5] border-t border-[#E8E4DC] flex justify-end">
+        <div className="p-6 bg-white border-t border-[#E8E4DC] flex justify-end">
           <button
             onClick={onClose}
             className="px-6 py-2.5 rounded-full bg-[#141413] text-white text-xs font-semibold hover:bg-[#2A2926] transition-colors cursor-pointer"

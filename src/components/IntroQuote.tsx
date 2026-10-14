@@ -4,7 +4,7 @@ import { CheckCircle2, Award, Users, Cpu } from 'lucide-react';
 
 export const IntroQuote: React.FC = () => {
   return (
-    <section id="intro" className="py-24 sm:py-32 bg-[#FAF8F5] border-b border-[#E8E4DC]">
+    <section id="intro" className="py-24 sm:py-32 bg-white border-b border-[#E8E4DC]">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         
         {/* Editorial Sub-banner / Philosophy Kicker */}
@@ -41,7 +41,7 @@ export const IntroQuote: React.FC = () => {
               </div>
               <div className="mt-8 pt-4 border-t border-[#F2EFE9] flex items-center justify-between text-xs text-[#7A776F]">
                 <span>Proven Experience</span>
-                <span className="w-1.5 h-1.5 rounded-full bg-[#FFE600] group-hover:scale-150 transition-transform" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#004ab5] group-hover:scale-150 transition-transform" />
               </div>
             </div>
           ))}

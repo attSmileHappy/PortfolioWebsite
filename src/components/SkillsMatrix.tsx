@@ -8,7 +8,7 @@ export const SkillsMatrix: React.FC = () => {
   const icons = [Terminal, Layers, Cpu, Database];
 
   return (
-    <section id="skills" className="py-24 sm:py-32 bg-[#FAF8F5] border-t border-[#E8E4DC]">
+    <section id="skills" className="py-24 sm:py-32 bg-white border-t border-[#E8E4DC]">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         
         {/* Section Header */}
@@ -36,12 +36,12 @@ export const SkillsMatrix: React.FC = () => {
                 className={`p-4 rounded-xl border text-left transition-all cursor-pointer flex items-center gap-3 ${
                   isSelected
                     ? 'bg-[#141413] text-white border-[#141413] shadow-xs'
-                    : 'bg-white text-[#141413] border-[#E8E4DC] hover:border-[#141413]'
+                    : 'bg-white text-[#141413] border-[#E8E4DC] hover:border-[#004ab5]'
                 }`}
               >
                 <div
                   className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${
-                    isSelected ? 'bg-white/20 text-[#FFE600]' : 'bg-[#FAF8F5] text-[#141413]'
+                    isSelected ? 'bg-white/20 text-[#004ab5]' : 'bg-[#FAF8F5] text-[#141413]'
                   }`}
                 >
                   <Icon className="w-4 h-4" />

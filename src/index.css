@@ -5,7 +5,9 @@
     --font-sans: 'Plus Jakarta Sans', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
   }
 
-  html {
+  html, body {
+    background-color: #ffffff;
+    color: #141413;
     font-family: var(--font-sans);
     scroll-behavior: smooth;
     text-rendering: optimizeLegibility;

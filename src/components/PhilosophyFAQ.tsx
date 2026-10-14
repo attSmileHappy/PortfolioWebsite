@@ -10,12 +10,12 @@ export const PhilosophyFAQ: React.FC = () => {
   };
 
   return (
-    <section id="philosophy" className="py-24 sm:py-32 bg-[#FAF8F5] border-t border-[#E8E4DC]">
+    <section id="philosophy" className="py-24 sm:py-32 bg-white border-t border-[#E8E4DC]">
       <div className="max-w-4xl mx-auto px-6 sm:px-8">
         
         {/* Section Header */}
         <div className="text-center mb-16">
-          <p className="text-xs sm:text-sm font-bold tracking-widest text-[#7A776F] uppercase mb-3">
+          <p className="text-xs sm:text-sm font-bold tracking-widest text-[#004ab5] uppercase mb-3">
             Q&A · Technical In-Depth
           </p>
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-[#141413]">
@@ -37,12 +37,14 @@ export const PhilosophyFAQ: React.FC = () => {
                   className="w-full flex items-center justify-between text-left group cursor-pointer"
                   aria-expanded={isOpen}
                 >
-                  <span className="text-base sm:text-lg font-bold text-[#141413] group-hover:text-black pr-6">
+                  <span className={`text-base sm:text-lg font-bold transition-colors pr-6 ${
+                    isOpen ? 'text-[#004ab5]' : 'text-[#141413] group-hover:text-[#004ab5]'
+                  }`}>
                     {faq.question}
                   </span>
                   <span
-                    className={`w-8 h-8 rounded-full border border-[#DCD6C9] flex items-center justify-center shrink-0 transition-transform duration-300 ${
-                      isOpen ? 'rotate-180 bg-[#141413] text-white border-[#141413]' : 'bg-white text-[#141413]'
+                    className={`w-8 h-8 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${
+                      isOpen ? 'rotate-180 bg-[#004ab5] text-white border-[#004ab5] shadow-xs' : 'bg-white text-[#141413] border-[#DCD6C9]'
                     }`}
                   >
                     <ChevronDown className="w-4 h-4" />

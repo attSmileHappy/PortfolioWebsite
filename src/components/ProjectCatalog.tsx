@@ -23,7 +23,7 @@ export const ProjectCatalog: React.FC<ProjectCatalogProps> = ({ onSelectProject 
   };
 
   return (
-    <section id="projects" className="py-24 sm:py-32 bg-[#FAF8F5] border-t border-[#E8E4DC]">
+    <section id="projects" className="py-24 sm:py-32 bg-white border-t border-[#E8E4DC]">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         
         {/* Section Header */}
@@ -46,7 +46,7 @@ export const ProjectCatalog: React.FC<ProjectCatalogProps> = ({ onSelectProject 
               onClick={() => setActiveCategory('all')}
               className={`px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-all whitespace-nowrap cursor-pointer ${
                 activeCategory === 'all'
-                  ? 'bg-white text-[#141413] shadow-2xs'
+                  ? 'bg-white text-[#004ab5] shadow-2xs'
                   : 'text-[#7A776F] hover:text-[#141413]'
               }`}
             >
@@ -56,7 +56,7 @@ export const ProjectCatalog: React.FC<ProjectCatalogProps> = ({ onSelectProject 
               onClick={() => setActiveCategory('work')}
               className={`px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-all whitespace-nowrap cursor-pointer ${
                 activeCategory === 'work'
-                  ? 'bg-white text-[#141413] shadow-2xs'
+                  ? 'bg-white text-[#004ab5] shadow-2xs'
                   : 'text-[#7A776F] hover:text-[#141413]'
               }`}
             >
@@ -66,7 +66,7 @@ export const ProjectCatalog: React.FC<ProjectCatalogProps> = ({ onSelectProject 
               onClick={() => setActiveCategory('team')}
               className={`px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-all whitespace-nowrap cursor-pointer ${
                 activeCategory === 'team'
-                  ? 'bg-white text-[#141413] shadow-2xs'
+                  ? 'bg-white text-[#004ab5] shadow-2xs'
                   : 'text-[#7A776F] hover:text-[#141413]'
               }`}
             >
@@ -76,7 +76,7 @@ export const ProjectCatalog: React.FC<ProjectCatalogProps> = ({ onSelectProject 
               onClick={() => setActiveCategory('personal')}
               className={`px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-all whitespace-nowrap cursor-pointer ${
                 activeCategory === 'personal'
-                  ? 'bg-white text-[#141413] shadow-2xs'
+                  ? 'bg-white text-[#004ab5] shadow-2xs'
                   : 'text-[#7A776F] hover:text-[#141413]'
               }`}
             >
@@ -93,7 +93,7 @@ export const ProjectCatalog: React.FC<ProjectCatalogProps> = ({ onSelectProject 
               <div
                 key={project.id}
                 onClick={() => onSelectProject(project.id)}
-                className="group relative flex flex-col justify-between p-7 rounded-2xl bg-white border border-[#E8E4DC] hover:border-[#141413] transition-all duration-300 hover:shadow-sm cursor-pointer"
+                className="group relative flex flex-col justify-between p-7 rounded-2xl bg-white border border-[#E8E4DC] hover:border-[#004ab5] transition-all duration-300 hover:shadow-sm cursor-pointer"
               >
                 <div>
                   {/* Top Header Row with Index & Category & Award */}
@@ -101,8 +101,8 @@ export const ProjectCatalog: React.FC<ProjectCatalogProps> = ({ onSelectProject 
                     <span className="font-mono font-bold text-[#141413] text-sm">{formattedIndex}</span>
                     <div className="flex items-center gap-2">
                       {project.award && (
-                        <span className="inline-flex items-center gap-1 font-semibold text-amber-700 bg-amber-50 px-2 py-0.5 rounded text-[11px] border border-amber-200">
-                          <Award className="w-3 h-3" />
+                        <span className="inline-flex items-center gap-1 font-semibold text-[#004ab5] bg-[#004ab5]/10 px-2 py-0.5 rounded text-[11px] border border-[#004ab5]/20">
+                          <Award className="w-3 h-3 text-[#004ab5]" />
                           {project.award}
                         </span>
                       )}
@@ -158,7 +158,7 @@ export const ProjectCatalog: React.FC<ProjectCatalogProps> = ({ onSelectProject 
                   {/* Deep dive indicator */}
                   <div className="mt-4 flex items-center justify-between text-xs font-semibold text-[#141413] pt-2">
                     <span className="group-hover:underline">자세히 보기 (Case Study)</span>
-                    <span className="w-6 h-6 rounded-full bg-[#FAF8F5] border border-[#E8E4DC] flex items-center justify-center group-hover:bg-[#FFE600] group-hover:border-[#FFE600] transition-colors">
+                    <span className="w-6 h-6 rounded-full bg-[#FAF8F5] border border-[#E8E4DC] flex items-center justify-center group-hover:bg-[#004ab5] group-hover:border-[#004ab5] group-hover:text-white transition-colors">
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </span>
                   </div>
